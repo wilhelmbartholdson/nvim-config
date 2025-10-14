@@ -7,3 +7,5 @@ require("config.options")
 -- initialize lazy.nvim
 require("config.lazy")
 
+-- initialize lsp
+require("config.lsp")

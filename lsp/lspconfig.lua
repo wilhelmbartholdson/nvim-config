@@ -1,0 +1,21 @@
+-- NvChad's sane defaults (on_init, on_attach, capabilities)
+require("nvchad.configs.lspconfig").defaults()
+
+
+
+local servers = {
+  "pyright",
+  "html",
+  "yamlls",
+  "cssls",
+  "ts_ls",
+  "emmet_ls",
+  "r_language_server",
+  "docker_compose_language_service",
+  "dockerls",
+  "jsonls",
+  "lua_ls"
+}
+
+vim.lsp.enable(servers)
+
