@@ -1,0 +1,13 @@
+{
+    "if-name-main": {
+        "prefix": ["if name main"],
+        "body": [
+            "def main() -> None:",
+            "\tpass",
+            "",
+            "if __name__ == \"__main__\":",
+            "\tmain()"
+        ],
+        "description": "if name main check"
+    }
+}
