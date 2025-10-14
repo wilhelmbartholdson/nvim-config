@@ -44,6 +44,7 @@ return {
         "prismals",
         "pyright",
         "r_language_server",
+        "ruff",
         "ts_ls",
         "yamlls"
       },
