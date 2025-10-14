@@ -28,5 +28,5 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.wrap = false -- setting nowrap
+vim.opt.wrap = true -- setting nowrap
 vim.opt.sidescrolloff = 8 -- how many columns the cursor keeps from the side of the screen when sidescrolling
