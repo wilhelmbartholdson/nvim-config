@@ -1,13 +1,15 @@
 return {
   "hrsh7th/nvim-cmp",
+  version = false,
   event = "InsertEnter",
   dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer", -- source for text in buffer
     "hrsh7th/cmp-path", -- source for file system paths
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
     "L3MON4D3/cmp-luasnip-choice", -- completes clauses (e.g if-else)
+    "SergioRibera/cmp-dotenv", -- env-variables
   },
-
 
   opts = function()
 
@@ -28,7 +30,7 @@ return {
       snippet = { -- configure how nvim-cmp interacts with snippet engine
         expand = function(args)
           require("luasnip").lsp_expand(args.body)
-          vim.snippet.expand(args.body)
+          -- vim.snippet.expand(args.body)
         end,
       },
 
@@ -44,7 +46,7 @@ return {
         ["<C-f>"] = cmp.mapping.scroll_docs(4), -- forwards in docs preview
         ["<C-Space>"] = cmp.mapping.complete(), -- Show completion suggestions
         ["<C-e>"] = cmp.mapping.abort(), -- Close completion suggestions
-        ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Select completion
+        ["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Select completion
       }),
 
       -- Ghosttext
@@ -56,6 +58,8 @@ return {
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
+        { name = 'dotenv' },
+
         }, {
         { name = 'buffer' },
       })
