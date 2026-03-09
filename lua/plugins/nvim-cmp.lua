@@ -1,26 +1,30 @@
 return {
   "hrsh7th/nvim-cmp",
   version = false,
-  event = "InsertEnter",
+  event = { "InsertEnter", "CmdlineEnter" },
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-cmdline",
     "hrsh7th/cmp-buffer", -- source for text in buffer
-    "hrsh7th/cmp-path", -- source for file system paths
-    "saadparwaiz1/cmp_luasnip", -- for autocompletion
-    "L3MON4D3/cmp-luasnip-choice", -- completes clauses (e.g if-else)
+    "hrsh7th/cmp-path",   -- source for file system paths
+    -- "saadparwaiz1/cmp_luasnip",    -- for autocompletion
+    -- "L3MON4D3/cmp-luasnip-choice", -- completes clauses (e.g if-else)
     "SergioRibera/cmp-dotenv", -- env-variables
+    -- "crazyhulk/cmp-sign",
+    "tailwind-tools",
+    "onsails/lspkind-nvim"
+    -- "roobert/tailwindcss-colorizer-cmp.nvim" -- tailwind completion
   },
 
   opts = function()
-
     -- set ghosttext
     vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
 
-    local cmp = require("cmp")
     local luasnip = require("luasnip")
+    local cmp = require("cmp")
 
     -- loads vscode-style snippets from installed plugins (e.g friendly_snippets)
-    require("luasnip.loaders.from_vscode").lazy_load({ paths="~/.config/nvim/all_snippets"})
+    require("luasnip.loaders.from_vscode").lazy_load({ paths = "~/.config/nvim/all_snippets" })
 
     cmp.setup({
       completion = {
@@ -38,14 +42,18 @@ return {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       },
-
+      formatting = {
+        format = require("lspkind").cmp_format({
+          before = require("tailwind-tools.cmp").lspkind_format
+        })
+      },
       mapping = cmp.mapping.preset.insert({
-        ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-        ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4), -- backwards in docs preview
-        ["<C-f>"] = cmp.mapping.scroll_docs(4), -- forwards in docs preview
-        ["<C-Space>"] = cmp.mapping.complete(), -- Show completion suggestions
-        ["<C-e>"] = cmp.mapping.abort(), -- Close completion suggestions
+        ["<C-k>"] = cmp.mapping.select_prev_item(),         -- previous suggestion
+        ["<C-j>"] = cmp.mapping.select_next_item(),         -- next suggestion
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),            -- backwards in docs preview
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),             -- forwards in docs preview
+        ["<C-Space>"] = cmp.mapping.complete(),             -- Show completion suggestions
+        ["<C-e>"] = cmp.mapping.abort(),                    -- Close completion suggestions
         ["<Tab>"] = cmp.mapping.confirm({ select = true }), -- Select completion
       }),
 
@@ -55,14 +63,17 @@ return {
       },
 
       -- sources for autocompletion
-      sources = cmp.config.sources({
+      sources = {
+        -- { name = 'nvim_cmp_sign' },
         { name = 'nvim_lsp' },
+        { name = 'lazydev' },
         { name = 'luasnip' },
         { name = 'dotenv' },
 
-        }, {
+      },
+      {
         { name = 'buffer' },
-      })
+      },
     })
 
     cmp.setup.cmdline({ '/', '?' }, {
@@ -72,14 +83,15 @@ return {
       }
     })
 
-    cmp.setup.cmdline( ':' , {
+    cmp.setup.cmdline(':', {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
         { name = 'path' }
       }, {
         { name = 'cmdline' }
-        })
       })
+    })
+
     --   sources = cmp.config.sources({
     --     { name = "nvim_lsp" }, -- auto-cmp from language server
     --     { name = "luasnip" }, -- snippets

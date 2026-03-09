@@ -6,14 +6,17 @@ return {
   opts = {},
   config = function()
     require("render-markdown").setup({
+      ft = { 'markdown' },
+      render_modes = { 'n', 'c', 't' },
+      completions = { lsp = { enabled = true } },
       latex = {
         enabled = true,
         converter = "latex2text",
         position = "above"
       },
-      ft = { 'markdown' },
-      render_modes = {'n', 'c', 't'},
-      completions = { lsp = { enabled = true } },
+      links = {
+        enabled = true
+      },
     })
   end
 }

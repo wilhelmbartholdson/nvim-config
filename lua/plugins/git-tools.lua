@@ -4,7 +4,7 @@ return {
   },
   {
   "lewis6991/gitsigns.nvim",
-  config =function ()
+  opts = function ()
     require("gitsigns").setup()
 
     vim.keymap.set("n", "<leader>hp", ":Gitsigns preview_hunk<CR>", { desc = "Preview Git-hunk" })
