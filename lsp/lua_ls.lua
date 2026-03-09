@@ -1,4 +1,3 @@
-
 -- on_init = function(client)
 --   if client.workspace_folders then
 --     local path = client.workspace_folders[1].name
@@ -51,7 +50,7 @@
 return {
   cmd = { "lua-language-server" },
   filetypes = { "lua" },
-  root_markers = { ".luarc.josn", ".luarc.jsonc" },
+  root_markers = { ".luarc.json", ".luarc.jsonc" },
   settings = {
     Lua = {
       runtime = {
@@ -59,6 +58,11 @@ return {
         -- likely LuaJIT in the case of Neovim)
         version = 'LuaJIT',
       },
+      diagnostics = {
+        globals = {
+          'vim'
+        }
+      }
     },
   }
 }

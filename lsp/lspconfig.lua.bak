@@ -6,6 +6,7 @@
 return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
+  enabled = false,
   dependencies = {
     "hrsh7th/cmp-nvim-lsp",
     -- { "antonosha417/nvim-lsp-file-operations", config = true }, EXPERIMENTAL
@@ -22,7 +23,7 @@ return {
     local opts = { noremap = true, silent = true }
 
     --  controls what happens when an LSP is attached to a buffer
-    local on_attach = function (client, bufnr)
+    local on_attach = function(client, bufnr)
       opts.buffer = bufnr
 
       -- set keybinds
@@ -64,15 +65,15 @@ return {
     local capabilities = cmp_nvim_lsp.default_capabilities()
 
     -- Change diagnostics symbols in the sign column (gutter)
-    local signs = { Error = "✘ ", Warn  = "⚠ ", Hint  = "➤ ", Info  = "ℹ" }
+    local signs = { Error = "✘ ", Warn = "⚠ ", Hint = "➤ ", Info = "ℹ" }
     for type, icon in pairs(signs) do
       local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = ""})
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
 
     -- Configure all the languages
     -- PYTHON
-          -- Python
+    -- Python
     lspconfig["pyright"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
@@ -84,76 +85,76 @@ return {
       root_dir = lspconfig.util.root_pattern(".gitignore")
     })
 
-      -- HTML
+    -- HTML
     lspconfig["html"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-      -- yaml
+    -- yaml
     lspconfig["yamlls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-      -- css
+    -- css
     lspconfig["cssls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-      -- TypeScript
+    -- TypeScript
     lspconfig["ts_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-      -- emmet
+    -- emmet
     lspconfig["emmet_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      filetypes = { "html", "typescriptreact", "javascriptreact", "css"}
+      filetypes = { "html", "typescriptreact", "javascriptreact", "css" }
     })
 
-      -- R
+    -- R
     lspconfig["r_language_server"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
-      filetypes = {"r"}
+      filetypes = { "r" }
     })
 
-      -- DOCKER
-        -- "docker_compose_language_service",
+    -- DOCKER
+    -- "docker_compose_language_service",
     lspconfig["docker_compose_language_service"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-        -- "dockerls",
+    -- "dockerls",
     lspconfig["dockerls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-      -- "graphql",
+    -- "graphql",
     lspconfig["graphql"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-      -- "jsonls",
+    -- "jsonls",
     lspconfig["jsonls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-      -- "prismals",
+    -- "prismals",
     lspconfig["prismals"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
     })
 
-      -- lua (with special settings)
+    -- lua (with special settings)
     lspconfig["lua_ls"].setup({
       capabilities = capabilities,
       on_attach = on_attach,
