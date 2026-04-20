@@ -8,7 +8,8 @@ local servers = {
   "ts_ls",
   "clangd",
   "solidity_ls_nomicfoundation",
-  "bash"
+  "bash",
+  "taplo"
   -- "eslint"
   -- "tailwindcss",
   -- "solc"
