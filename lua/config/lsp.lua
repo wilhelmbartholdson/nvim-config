@@ -9,9 +9,9 @@ local servers = {
   "clangd",
   "solidity_ls_nomicfoundation",
   "bash",
-  "taplo"
+  "taplo",
   -- "eslint"
-  -- "tailwindcss",
+  "tailwindcss",
   -- "solc"
 }
 
