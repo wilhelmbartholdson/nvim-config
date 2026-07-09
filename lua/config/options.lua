@@ -2,6 +2,9 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- FIXME: 2026-07-09: Do not termsync. It mismatches somehow but I still don't fully understand. Redrawing issues.
+vim.opt.termsync = false
+
 -- Enable 24-bit colors
 vim.opt.termguicolors = true
 
