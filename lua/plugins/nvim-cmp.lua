@@ -11,9 +11,9 @@ return {
     -- "L3MON4D3/cmp-luasnip-choice", -- completes clauses (e.g if-else)
     "SergioRibera/cmp-dotenv", -- env-variables
     -- "crazyhulk/cmp-sign",
-    "tailwind-tools",
-    "onsails/lspkind-nvim"
-    -- "roobert/tailwindcss-colorizer-cmp.nvim" -- tailwind completion
+    -- "tailwind-tools",
+    "onsails/lspkind-nvim",
+    "roobert/tailwindcss-colorizer-cmp.nvim" -- tailwind completion
   },
 
   opts = function()
@@ -43,9 +43,8 @@ return {
         documentation = cmp.config.window.bordered(),
       },
       formatting = {
-        format = require("lspkind").cmp_format({
-          before = require("tailwind-tools.cmp").lspkind_format
-        })
+        -- format = require("lspkind").cmp_format({ -- before = require("tailwind-tools.cmp").lspkind_format })
+        format = require("tailwindcss-colorizer-cmp").formatter
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.select_prev_item(),         -- previous suggestion
