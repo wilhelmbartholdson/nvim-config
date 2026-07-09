@@ -1,7 +1,7 @@
 return {
   "catgoose/nvim-colorizer.lua",
   event = "BufReadPre",
-  enabled = false,
+  enabled = true,
   opts = {
     tailwind = true,
     sass = { enable = false },
