@@ -11,7 +11,7 @@ return {
     terminal = { enabled = false },
     git = { enabled = true },
     image = {
-      enabled = false,
+      enabled = true,
       formats = {
         "png",
         "jpg",
@@ -33,7 +33,7 @@ return {
     },
     notifier = { enabled = true },
     lazygit = { enabled = true },
-    scroll = { enabled = false },
+    scroll = { enabled = true },
     dashboard = {
       enabled = true,
       sections = {
