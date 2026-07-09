@@ -10,6 +10,7 @@ local servers = {
   "solidity_ls_nomicfoundation",
   "bash",
   "taplo",
+  "sqlls",
   -- "eslint"
   "tailwindcss",
   -- "solc"
