@@ -9,4 +9,5 @@ return {
     'tsx',
   },
   init_options = { hostInfo = 'neovim' },
+  rootmarkers = { ".git", "pyproject.toml" }
 }
