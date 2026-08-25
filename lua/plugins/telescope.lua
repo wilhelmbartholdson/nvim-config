@@ -9,6 +9,10 @@ return {
       { "<leader>gf", ":Telescope git_files<cr>",   desc = "Git files" },
       { "<leader>gb", ":Telescope git_commits<cr>", desc = "Git commits" },
     },
+    config = function()
+      require("telescope").load_extension('media_files')
+      require("telescope").load_extension('fzf')
+    end,
 
     pickers = {
       find_files = {
@@ -20,6 +24,30 @@ return {
       git_commits = {
         opts = {}
       }
+    },
+  },
+  -- media_files picker
+  {
+    "nvim-telescope/telescope-media-files.nvim",
+    dependencies = {
+      'nvim-lua/popup.nvim',
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim'
+      -- 'nvim-telescope/telescope-media-files.nvim',
+    },
+    opts = {
+      extensions = {
+        media_files = {
+          -- filetypes whitelist
+          -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+          filetypes = { "png", "webp", "jpg", "jpeg" },
+          -- find command (defaults to `fd`)
+          find_cmd = "rg"
+        }
+      },
     }
   },
+  {
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' }
+  }
 }
