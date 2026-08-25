@@ -16,9 +16,9 @@ return {
       "BufNewFile " .. vim.fn.expand "~" .. "/desktop/eiravault/*.md",
     },
     dependencies = {
-      "nvim-lua/plenary.nvim",        -- shortcut for lua-functions
-      "hrsh7th/nvim-cmp",             -- completions
-      "nvim-telescope/telescope.nvim", -- quick-switcher
+      "nvim-lua/plenary.nvim",          -- shortcut for lua-functions
+      "hrsh7th/nvim-cmp",               -- completions
+      "nvim-telescope/telescope.nvim",  -- quick-switcher
       "nvim-treesitter/nvim-treesitter" -- syntax-highlighting
     },
     opts = {
@@ -54,7 +54,14 @@ return {
             return require("obsidian").util.smart_action()
           end,
           opts = { buffer = true, expr = true },
-        }
+        },
+        -- NOTE: new note keymap
+        -- ["<leader>on"] = {
+        --   action = function()
+        --     return require("obsidian").Client.create_note()
+        --   end,
+        --   opts = { buffer = true, expr = true },
+        -- }
       },
 
       -- completion of wiki links, local markdown links, and tags using nvim-cmp.
@@ -232,8 +239,8 @@ return {
       -- Optional, configure additional syntax highlighting / extmarks.
       -- This requires you have `conceallevel` set to 1 or 2. See `:help conceallevel` for more details.
       ui = {
-        enable = true,        -- set to false to disable all additional syntax features
-        update_debounce = 200, -- update delay after a text change (in milliseconds)
+        enable = true,          -- set to false to disable all additional syntax features
+        update_debounce = 200,  -- update delay after a text change (in milliseconds)
         max_file_length = 5000, -- disable UI features for files with more than this many lines
         -- Define how various check-boxes are displayed
         checkboxes = {
