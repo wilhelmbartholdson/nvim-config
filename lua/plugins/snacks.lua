@@ -65,10 +65,10 @@ return {
         -- (experimental)
         ---@param lang string tree-sitter language
         ---@param type snacks.image.Type image type
-        conceal = function(lang, type)
-          -- only conceal math expressions
-          return type == "math"
-        end,
+        -- conceal = function(lang, type)
+        --   -- only conceal math expressions
+        --   return type == "math"
+        -- end,
       },
     },
 
