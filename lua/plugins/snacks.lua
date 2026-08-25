@@ -13,6 +13,23 @@ return {
 
     image = {
       enabled = true,
+      -- ObsidianPasteImg writes attachments under the active vault root. Teach
+      -- Snacks to resolve those vault-relative links from that root as well.
+      resolve = function(_, src)
+        if not vim.startswith(src, "assets/imgs/") then
+          return nil
+        end
+
+        local ok, client = pcall(function()
+          return require("obsidian").get_client()
+        end)
+        if not ok then
+          return nil
+        end
+
+        local path = client:vault_root() / src
+        return path:is_file() and tostring(path) or nil
+      end,
       formats = {
         "png",
         "jpg",
