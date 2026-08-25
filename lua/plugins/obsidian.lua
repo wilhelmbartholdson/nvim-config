@@ -55,6 +55,37 @@ return {
           end,
           opts = { buffer = true, expr = true },
         },
+        ["<leader>op"] = {
+          -- Paste image
+          action = function()
+            local obsidian = require "obsidian"
+            local client = obsidian.get_client()
+            local util = obsidian.util
+
+            local filename = util.input("Enter file name: ", { completion = "file" })
+            if filename == nil then
+              return
+            elseif filename == "" then
+              filename = client.opts.image_name_func()
+            end
+
+            local Path = require "obsidian.path"
+            local img_folder = Path.new(client.opts.attachments.img_folder)
+            if not img_folder:is_absolute() then
+              img_folder = client.dir / img_folder
+            end
+
+            local path = require("obsidian.img_paste").paste_img {
+              fname = filename,
+              default_dir = img_folder,
+              should_confirm = false,
+            }
+            if path ~= nil then
+              util.insert_text(client.opts.attachments.img_text_func(client, path))
+            end
+          end,
+          opts = { buffer = true },
+        },
         -- NOTE: new note keymap
         -- ["<leader>on"] = {
         --   action = function()
@@ -113,6 +144,11 @@ return {
 
       -- Either 'wiki' or 'markdown'
       preferred_link_style = "wiki",
+
+      -- Default name for images pasted with `:ObsidianPasteImg`.
+      image_name_func = function()
+        return string.format("%s-image", os.time())
+      end,
 
       -- Optional, boolean or a function that takes a filename and returns a boolean.
       -- `true` indicates that you don't want obsidian.nvim to manage frontmatter.
@@ -289,13 +325,8 @@ return {
         -- If this is a relative path it will be interpreted as relative to the vault root.
         -- You can always override this per image by passing a full path to the command instead of just a filename.
         img_folder = "assets/imgs", -- This is the default
-
-        -- Optional, customize the default name or prefix when pasting images via `:ObsidianPasteImg`.
-        ---@return string
-        img_name_func = function()
-          -- Prefix image names with timestamp.
-          return string.format("%s-", os.time())
-        end,
+        -- Skip the save confirmation; `<leader>op` still prompts for a name.
+        confirm_img_paste = false,
 
         -- A function that determines the text to insert in the note when pasting an image.
         -- It takes two arguments, the `obsidian.Client` and an `obsidian.Path` to the image file.
@@ -305,7 +336,7 @@ return {
         ---@return string
         img_text_func = function(client, path)
           path = client:vault_relative_path(path) or path
-          return string.format("![%s](%s)", path.name, path)
+          return string.format("![%s](<%s>)", path.name, path)
         end,
       },
     },
