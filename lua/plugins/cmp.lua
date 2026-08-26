@@ -14,6 +14,7 @@ return {
     -- The completion menu and completion engine.
     "hrsh7th/nvim-cmp",
     -- Use the latest commit rather than only tagged releases.
+    enabled = false,
     version = false,
     dependencies = {
       -- Language-server configuration.  Servers themselves are configured in
