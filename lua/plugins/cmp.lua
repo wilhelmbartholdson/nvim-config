@@ -53,10 +53,12 @@ return {
       })
 
       cmp.setup({
+
         completion = {
           -- Show a menu and documentation; do not preselect an item.
           completeopt = "menu,menuone,preview,noselect",
         },
+
         snippet = {
           -- Required by nvim-cmp: tells it how to insert a snippet item after
           -- confirmation.  LuaSnip handles snippets from LSPs and this config.
@@ -64,15 +66,18 @@ return {
             require("luasnip").lsp_expand(args.body)
           end,
         },
+
         window = {
           -- Use bordered floating windows for the menu and its documentation.
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
         },
+
         formatting = {
           -- Add Tailwind colours to matching completion candidates.
           format = require("tailwindcss-colorizer-cmp").formatter,
         },
+
         mapping = cmp.mapping.preset.insert({
           -- Completion-menu navigation and documentation scrolling.
           ["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -85,10 +90,12 @@ return {
           ["<Tab>"] = cmp.mapping.confirm({ select = true }),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }),
+
         experimental = {
           -- Display the currently selected candidate inline as ghost text.
           ghost_text = true,
         },
+
         -- The first list contains primary sources.  To add a normal completion
         -- package, add its `{ name = "..." }` entry here after adding the
         -- matching plugin in `dependencies` above.  The source name is set by
