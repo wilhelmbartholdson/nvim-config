@@ -123,7 +123,7 @@ return {
     -- | above  | above latex block                               |
     -- | below  | below latex block                               |
     -- | center | centered with latex block (must be single line) |
-    position = 'center',
+    position = 'above',
     -- Number of empty lines above latex blocks.
     top_pad = 0,
     -- Number of empty lines below latex blocks.
