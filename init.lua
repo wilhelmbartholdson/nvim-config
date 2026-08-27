@@ -10,6 +10,15 @@ require("config.lazy")
 -- clipboard is in p (not "+ i.e +-registry)
 vim.opt.clipboard = "unnamedplus"
 
+-- set scrolloff
+vim.opt.scrolloff = 8
+
+-- set conceallevel
+vim.o.conceallevel = 1
+
+-- set commandline height to 0 for floating cmdline
+-- vim.o.cmdheight = 0
+
 -- initialize lsp
 require("config.lsp")
 
