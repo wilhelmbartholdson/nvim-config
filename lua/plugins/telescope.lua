@@ -10,21 +10,50 @@ return {
       { "<leader>gb", ":Telescope git_commits<cr>", desc = "Git commits" },
     },
     config = function()
-      require("telescope").load_extension('media_files')
-      require("telescope").load_extension('fzf')
+      local telescope = require("telescope")
+
+      telescope.load_extension('media_files')
+      telescope.load_extension('fzf')
+
+      telescope.setup(
+        {
+          pickers = {
+            find_files = {
+              find_command = {
+                "rg",
+                "--files",
+                "--hidden",             -- include hidden files
+                "--no-ignore-vcs",      -- don't respect .gitignore
+                "--glob", "!**/.git/*", -- Exclude .git/
+                -- Exclude config files and cache
+                "--glob", "!.DS_Store",
+                "--glob", "!*cache*",
+                "--glob", "!.venv",
+                "--glob", "!.uv",
+                -- Exclude filetypes that can not be viewed in previewer
+                "--glob", "!*.mp3",
+                "--glob", "!*.mp4",
+                "--glob", "!*.png",
+                "--glob", "!*.jpg",
+                "--glob", "!*.jpeg",
+                "--glob", "!*.pdf",
+                "--glob", "!*.pptx",
+                "--glob", "!*.docx",
+                "--glob", "!*.xlsx",
+                "--glob", "!*.xlsm",
+                "--glob", "!*.xls",
+                "--glob", "!*.zip",
+                "--glob", "!*.canvas"
+              }
+            },
+            git_commits = {
+              -- opts = {}
+            }
+          },
+        }
+      )
     end,
 
-    pickers = {
-      find_files = {
-        opts = {
-          hidden = true,   -- show hidden files
-          no_ignore = true -- show files hidden by .gitignore
-        }
-      },
-      git_commits = {
-        opts = {}
-      }
-    },
   },
   -- media_files picker
   {
