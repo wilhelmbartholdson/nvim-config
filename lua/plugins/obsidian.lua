@@ -86,7 +86,16 @@ return {
           end,
           opts = { buffer = true },
         },
-        -- NOTE: new note keymap
+        -- NOTE: quick switcher
+        -- ["<leader>oq"] = {
+        --   -- quick switch
+        --   action = function()
+        --     local obsidian = require "obsidian"
+        --     local client = obsidian.get_client()
+        --     return client.command("ObsidianQuickSwitch", {})
+        --   end
+        -- }
+        -- NOTE: new note
         -- ["<leader>on"] = {
         --   action = function()
         --     return require("obsidian").Client.create_note()
