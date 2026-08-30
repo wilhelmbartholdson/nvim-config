@@ -287,7 +287,7 @@ return {
           [">"] = { char = "", hl_group = "ObsidianRightArrow" },
           ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
           ["!"] = { char = "", hl_group = "ObsidianImportant" },
-          ["k"] = { char = "􁠲", hl_group = "ObsidianCheckKey" },
+          ["k"] = { char = "", hl_group = "ObsidianCheckKey" },
           -- Replace the above with this if you don't have a patched font:
           -- [" "] = { char = "☐", hl_group = "ObsidianTodo" },
           -- ["x"] = { char = "✔", hl_group = "ObsidianDone" },
@@ -316,7 +316,7 @@ return {
           ObsidianTag = { italic = true, fg = "#89ddff" },
           ObsidianBlockID = { italic = true, fg = "#89ddff" },
           ObsidianHighlightText = { bg = "#75662e" },
-          ObsidianCheckKey = { bold = true, bg = "#FFC000" },
+          ObsidianCheckKey = { bold = true, fg = "#FFC000" },
         },
       },
 
