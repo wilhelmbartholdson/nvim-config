@@ -13,6 +13,9 @@ return {
 
     image = {
       enabled = true,
+
+      -- disable snacks latex rendering (prefer rendermd)
+      math = { enabled = false },
       -- ObsidianPasteImg writes attachments under the active vault root. Teach
       -- Snacks to resolve those vault-relative links from that root as well.
       resolve = function(_, src)
