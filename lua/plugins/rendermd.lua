@@ -1,11 +1,11 @@
 return {
   'MeanderingProgrammer/render-markdown.nvim',
+  enabled = true,
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
     'nvim-tree/nvim-web-devicons' -- if you prefer nvim-web-devicons
   },
   -- Whether markdown should be rendered by default.
-  enabled = true,
   -- Vim modes that will show a rendered view of the markdown file, :h mode(), for all enabled
   -- components. Individual components can be enabled for other modes. Remaining modes will be
   -- unaffected by this plugin.
@@ -125,9 +125,9 @@ return {
     -- | center | centered with latex block (must be single line) |
     position = 'above',
     -- Number of empty lines above latex blocks.
-    top_pad = 0,
+    top_pad = 10,
     -- Number of empty lines below latex blocks.
-    bottom_pad = 0,
+    bottom_pad = 5,
   },
   on = {
     -- Called when plugin initially attaches to a buffer.
@@ -141,7 +141,7 @@ return {
   },
   completions = {
     -- Settings for blink.cmp completions source
-    blink = { enabled = false },
+    blink = { enabled = true },
     -- Settings for coq_nvim completions source
     coq = { enabled = false },
     -- Settings for in-process language server completions
