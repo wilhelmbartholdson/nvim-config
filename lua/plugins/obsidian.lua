@@ -62,7 +62,7 @@ return {
             local client = obsidian.get_client()
             local util = obsidian.util
 
-            local filename = util.input("Enter file name: ", { completion = "file" })
+            local filename = util.input("Enter file name: ")
             if filename == nil then
               return
             elseif filename == "" then
