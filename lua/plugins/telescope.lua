@@ -30,6 +30,7 @@ return {
                 "--glob", "!*cache*",
                 "--glob", "!.venv",
                 "--glob", "!.uv",
+                "--glob", "!*node_modules",
                 -- Exclude filetypes that can not be viewed in previewer
                 "--glob", "!*.mp3",
                 "--glob", "!*.mp4",
