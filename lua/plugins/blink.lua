@@ -54,7 +54,7 @@ return {
 
       ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
 
-      ["<CR>"] = { "accept", "fallback" }
+      -- ["<CR>"] = { "accept", "fallback" }
 
 
     },
