@@ -234,7 +234,7 @@ return {
 
   },
   keys = {
-    { "<leader>LG", function() Snacks.lazygit() end,     desc = "Lazygit" },
+    { "<leader>lg", function() Snacks.lazygit() end,     desc = "Lazygit" },
     { "<leader>ir", function() Snacks.image.hover() end, desc = "Preview image on hover" },
     { "<leader>go", function() Snacks.gitbrowse() end,   desc = "Open github remote repo" }
   }
