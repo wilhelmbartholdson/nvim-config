@@ -55,7 +55,8 @@ vim.api.nvim_create_autocmd('FileType', {
     'lua',
     'html',
     'css',
-    'markdown'
+    'markdown',
+    "r"
   },
   callback = function()
     vim.treesitter.start()

@@ -31,6 +31,8 @@ return {
                 "--glob", "!.venv",
                 "--glob", "!.uv",
                 "--glob", "!*node_modules",
+                "--glob", "!*lib",
+                "--glob", "!renv/",
                 -- Exclude filetypes that can not be viewed in previewer
                 "--glob", "!*.mp3",
                 "--glob", "!*.mp4",

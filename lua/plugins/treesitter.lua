@@ -23,6 +23,8 @@ return {
       "latex",
       "regex",
       "r",
+      "csv",
+      "yaml",
       "css"
     }
   end
