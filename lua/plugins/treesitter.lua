@@ -62,6 +62,7 @@ return {
       "markdown_inline",
       "latex",
       "regex",
+      "r",
       "css"
     }
 
