@@ -12,6 +12,7 @@ return {
       markdown = { "prettier" },
       markdown_inline = { "prettier" },
       r = { "styler" },
+      python = { "black" },
       svelte = { "prettier" },
       scss = { "prettier" },
       typescript = { "prettier" },
