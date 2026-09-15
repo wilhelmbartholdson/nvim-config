@@ -1,5 +1,5 @@
 return {
-  -- {
+    -- {
   --   "quarto-dev/quarto-nvim",
   --   dependencies = {
   --     "nvim-treesitter/nvim-treesitter",

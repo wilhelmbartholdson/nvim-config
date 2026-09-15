@@ -19,13 +19,13 @@ vim.opt.relativenumber = true
 
 -- Indentation for Lua
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "lua",
-  callback = function()
-    vim.bo.tabstop = 2
-    vim.bo.shiftwidth = 2
-    vim.bo.expandtab = true
-    vim.bo.softtabstop = 2
-  end,
+    pattern = "lua",
+    callback = function ()
+        vim.bo.tabstop = 2
+        vim.bo.shiftwidth = 2
+        vim.bo.expandtab = true
+        vim.bo.softtabstop = 2
+    end
 })
 
 -- folding defaults
