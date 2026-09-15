@@ -10,7 +10,7 @@ return {
 			preset = "classic",
 
 			-- Delay before showing the popup. Can be a number or a function that returns a number.
-  ---@type number | fun(ctx: { keys: string, mode: string, plugin?: string }):number
+      ---@type number | fun(ctx: { keys: string, mode: string, plugin?: string }):number
 			delay = function (ctx)
 				return ctx.plugin and 0 or 200
 			end,
@@ -23,22 +23,22 @@ return {
 			end,
 
 			--- You can add any mappings here, or use `require('which-key').add()` later
-  ---@type wk.Spec
+      ---@type wk.Spec
 			spec = {},
 			-- show a warning when issues were detected with your mappings
 			notify = true,
 
 			-- Which-key automatically sets up triggers for your mappings.
-  -- But you can disable this and setup the triggers manually.
-  -- Check the docs for more info.
-  ---@type wk.Spec
-			triggers = {
-				{ "<auto>", mode = "nxso" }
-			},
+      -- But you can disable this and setup the triggers manually.
+      -- Check the docs for more info.
+      ---@type wk.Spec
+			-- triggers = {
+			-- 	{ "<leader>", mode = "nxso" }
+			-- },
 
 			-- Start hidden and wait for a key to be pressed before showing the popup
-  -- Only used by enabled xo mapping modes.
-  ---@param ctx { mode: string, operator: string }
+      -- Only used by enabled xo mapping modes.
+      ---@param ctx { mode: string, operator: string }
 			defer = function (ctx)
 				return ctx.mode == "V" or ctx.mode == "<C-V>"
 			end,
@@ -186,7 +186,7 @@ return {
 		},
 		keys = {
 			{
-				"<leader>?",
+				"<leader>wk",
 				function ()
 					require("which-key").show({ global = false })
 				end,

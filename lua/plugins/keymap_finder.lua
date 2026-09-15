@@ -49,15 +49,20 @@ local function open_keymap_help()
 
 	-- wf.select fuzzy-matches table keys. Supplying lhs as each key therefore
 	-- searches the key sequence, while its value is rendered as the description.
-	require("wf").select(keymaps, {
-		title = "Keymap help",
-		selector = "fuzzy",
-		-- wf normally truncates key labels to seven characters because it is a
+	require("wf").select(
+		keymaps,
+		{
+			title = "Keymap help",
+			selector = "fuzzy",
+			-- wf normally truncates key labels to seven characters because it is a
 		-- which-key UI. A keymap reference needs to show the complete lhs.
-		prefix_size = math.max(longest_lhs, 1),
-	}, function()
-		-- This is deliberately a no-op: selecting a mapping must never run it.
-	end)
+			prefix_size = math.max(longest_lhs, 1)
+		},
+		function ()
+			-- This is deliberately a no-op: selecting a mapping must never run it.
+
+		end
+	)
 
 	disable_blink_in_new_buffers(existing_buffers)
 end
@@ -66,12 +71,13 @@ return {
 	{
 		"Cassin01/wf.nvim",
 		version = "*",
-		config = function()
+		enabled = false,
+		config = function ()
 			vim.keymap.set("n", "<Leader>wf", open_keymap_help, {
 				noremap = true,
 				silent = true,
-				desc = "Search keymaps",
+				desc = "Search keymaps"
 			})
-		end,
-	},
+		end
+	}
 }
