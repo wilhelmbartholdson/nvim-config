@@ -26,6 +26,12 @@ return {
                 -- Prevent a project .Rprofile (for example, renv) from hiding the
         -- globally installed styler package when Conform invokes R.
                 prepend_args = { "--no-init-file" }
+            },
+            luafmt = {
+                prepend_args = {
+                    "--config",
+                    vim.fn.stdpath("config") .. "/formatters/luafmt.toml"
+                }
             }
         },
         format_on_save = function ()
