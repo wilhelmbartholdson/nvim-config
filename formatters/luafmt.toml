@@ -1,5 +1,5 @@
 [indent]
-kind = "Space"
+kind = "Tab"
 width = 4
 
 [layout]
