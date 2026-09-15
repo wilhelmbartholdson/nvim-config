@@ -589,8 +589,18 @@ return {
       -- | quote_icon | optional override for quote.icon value for individual callout       |
       -- | category   | optional metadata useful for filtering                              |
 
-            note      = { raw = '[!NOTE]', rendered = '󰋽 Note', highlight = 'RenderMarkdownInfo', category = 'github' },
-            tip       = { raw = '[!TIP]', rendered = '󰌶 Tip', highlight = 'RenderMarkdownSuccess', category = 'github' },
+            note      = {
+                raw = '[!NOTE]',
+                rendered = '󰋽 Note',
+                highlight = 'RenderMarkdownInfo',
+                category = 'github'
+            },
+            tip       = {
+                raw = '[!TIP]',
+                rendered = '󰌶 Tip',
+                highlight = 'RenderMarkdownSuccess',
+                category = 'github'
+            },
             important = {
                 raw = '[!IMPORTANT]',
                 rendered = '󰅾 Important',
@@ -622,9 +632,24 @@ return {
                 highlight = 'RenderMarkdownInfo',
                 category = 'obsidian'
             },
-            tldr      = { raw = '[!TLDR]', rendered = '󰨸 Tldr', highlight = 'RenderMarkdownInfo', category = 'obsidian' },
-            info      = { raw = '[!INFO]', rendered = '󰋽 Info', highlight = 'RenderMarkdownInfo', category = 'obsidian' },
-            todo      = { raw = '[!TODO]', rendered = '󰗡 Todo', highlight = 'RenderMarkdownInfo', category = 'obsidian' },
+            tldr      = {
+                raw = '[!TLDR]',
+                rendered = '󰨸 Tldr',
+                highlight = 'RenderMarkdownInfo',
+                category = 'obsidian'
+            },
+            info      = {
+                raw = '[!INFO]',
+                rendered = '󰋽 Info',
+                highlight = 'RenderMarkdownInfo',
+                category = 'obsidian'
+            },
+            todo      = {
+                raw = '[!TODO]',
+                rendered = '󰗡 Todo',
+                highlight = 'RenderMarkdownInfo',
+                category = 'obsidian'
+            },
             hint      = {
                 raw = '[!HINT]',
                 rendered = '󰌶 Hint',
@@ -655,8 +680,18 @@ return {
                 highlight = 'RenderMarkdownWarn',
                 category = 'obsidian'
             },
-            help      = { raw = '[!HELP]', rendered = '󰘥 Help', highlight = 'RenderMarkdownWarn', category = 'obsidian' },
-            faq       = { raw = '[!FAQ]', rendered = '󰘥 Faq', highlight = 'RenderMarkdownWarn', category = 'obsidian' },
+            help      = {
+                raw = '[!HELP]',
+                rendered = '󰘥 Help',
+                highlight = 'RenderMarkdownWarn',
+                category = 'obsidian'
+            },
+            faq       = {
+                raw = '[!FAQ]',
+                rendered = '󰘥 Faq',
+                highlight = 'RenderMarkdownWarn',
+                category = 'obsidian'
+            },
             attention = {
                 raw = '[!ATTENTION]',
                 rendered = '󰀪 Attention',
@@ -669,7 +704,12 @@ return {
                 highlight = 'RenderMarkdownError',
                 category = 'obsidian'
             },
-            fail      = { raw = '[!FAIL]', rendered = '󰅖 Fail', highlight = 'RenderMarkdownError', category = 'obsidian' },
+            fail      = {
+                raw = '[!FAIL]',
+                rendered = '󰅖 Fail',
+                highlight = 'RenderMarkdownError',
+                category = 'obsidian'
+            },
             missing   = {
                 raw = '[!MISSING]',
                 rendered = '󰅖 Missing',
@@ -688,7 +728,12 @@ return {
                 highlight = 'RenderMarkdownError',
                 category = 'obsidian'
             },
-            bug       = { raw = '[!BUG]', rendered = '󰨰 Bug', highlight = 'RenderMarkdownError', category = 'obsidian' },
+            bug       = {
+                raw = '[!BUG]',
+                rendered = '󰨰 Bug',
+                highlight = 'RenderMarkdownError',
+                category = 'obsidian'
+            },
             example   = {
                 raw = '[!EXAMPLE]',
                 rendered = '󰉹 Example',
@@ -701,7 +746,12 @@ return {
                 highlight = 'RenderMarkdownQuote',
                 category = 'obsidian'
             },
-            cite      = { raw = '[!CITE]', rendered = '󱆨 Cite', highlight = 'RenderMarkdownQuote', category = 'obsidian' }
+            cite      = {
+                raw = '[!CITE]',
+                rendered = '󱆨 Cite',
+                highlight = 'RenderMarkdownQuote',
+                category = 'obsidian'
+            }
         },
         link = {
             -- Turn on / off inline link icon rendering.
