@@ -43,6 +43,13 @@ require('vim._core.ui2').enable({
     }
 })
 
+-- set filetypes explicitly
+vim.filetype.add({
+    pattern = {
+        -- implicit ^ and $ is added so don't add manually
+        [".*tmux%.conf"] = "tmux"
+    }
+})
 -- nvim-treesitter
 vim.api.nvim_create_autocmd('FileType', {
     pattern = {
