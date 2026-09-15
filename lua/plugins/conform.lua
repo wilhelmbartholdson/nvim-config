@@ -9,6 +9,7 @@ return {
       json = { "prettier" },
       jsonc = { "prettier" },
       less = { "prettier" },
+      lua = { "luafmt" },
       markdown = { "prettier" },
       markdown_inline = { "prettier" },
       r = { "styler" },
