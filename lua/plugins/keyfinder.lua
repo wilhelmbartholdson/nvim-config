@@ -232,11 +232,15 @@ local function open()
   state.selected = 1
   state.results_buf = make_buffer(false)
   state.query_buf = make_buffer(true)
+  -- Blink honours this buffer-local switch, leaving completion unchanged
+  -- everywhere else while the dedicated search input remains plain text.
+  vim.b[state.query_buf].completion = false
 
-  local width = math.min(math.max(70, math.floor(vim.o.columns * 0.82)), 140)
-  local height = math.min(math.max(12, math.floor(vim.o.lines * 0.65)), vim.o.lines - 4)
-  local row = math.max(1, math.floor((vim.o.lines - height) / 2))
-  local col = math.max(0, math.floor((vim.o.columns - width) / 2))
+  -- Keep the lookup out of the editor's centre: anchor it near lower-right.
+  local width = math.min(math.max(70, math.floor(vim.o.columns * 0.55)), 120)
+  local height = math.min(math.max(12, math.floor(vim.o.lines * 0.55)), vim.o.lines - 4)
+  local row = math.max(1, vim.o.lines - height - 3)
+  local col = math.max(0, vim.o.columns - width - 3)
 
   -- The results and editable input are coordinated floats, so the search box
   -- remains visibly at the top while the listing buffer stays read-only.
