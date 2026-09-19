@@ -137,6 +137,11 @@ return {
                             if ctx.mode == 'cmdline' and string.find(ctx.line, ' ') == nil then return 3 end
                             return 0
                         end
+                    },
+                    snippets = {
+                        opts = {
+                            search_paths = { vim.fn.stdpath("config") .. "/snippets" }
+                        }
                     }
                 }
             },
