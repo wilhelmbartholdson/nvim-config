@@ -1,9 +1,9 @@
 return {
 
-    -- Cyberdream
+	-- Cyberdream
   -- =================================================================================================
 
-    -- colorscheme
+	-- colorscheme
   -- {
   --   "scottmckendry/cyberdream.nvim",
   --   lazy = false, -- make sure we load this during startup if it is your main colorscheme
@@ -18,10 +18,10 @@ return {
   --   end,
   -- },
 
-    -- Catppuccin
+	-- Catppuccin
   -- =================================================================================================
 
-    -- {
+	-- {
   --   "catppuccin/nvim",
   --   name = "catppuccin",
   --   priority = 1000,
@@ -80,12 +80,12 @@ return {
   --   end
   -- },
 
-    -- TokyoNight
+	-- TokyoNight
   -- =================================================================================================
-    {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
-        opts = {}
-    }
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {}
+	}
 }

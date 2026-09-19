@@ -47,21 +47,24 @@
 -- }
 
 return {
-    cmd = { "lua-language-server" },
-    filetypes = { "lua" },
-    root_markers = { ".luarc.json", ".luarc.jsonc" },
-    settings = {
-        Lua = {
-            runtime = {
-                -- Tell the language server which version of Lua you're using (most
+	cmd = { "lua-language-server" },
+	filetypes = { "lua" },
+	root_markers = { ".luarc.json", ".luarc.jsonc" },
+	settings = {
+		Lua = {
+			runtime = {
+				-- Tell the language server which version of Lua you're using (most
         -- likely LuaJIT in the case of Neovim)
-                version = 'LuaJIT'
-            },
-            diagnostics = {
-                globals = {
-                    'vim'
-                }
-            }
-        }
-    }
+				version = 'LuaJIT'
+			},
+			format = {
+				enable = false
+			},
+			diagnostics = {
+				globals = {
+					'vim'
+				}
+			}
+		}
+	}
 }

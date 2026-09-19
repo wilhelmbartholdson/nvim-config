@@ -1,13 +1,13 @@
 -- tailwind-tools.lua
 return {
-    "Eingin/tailwind-tools.nvim",
-    enabled = false,
-    name = "tailwind-tools",
-    build = ":UpdateRemotePlugins",
-    dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        "nvim-telescope/telescope.nvim", -- optional
-        "neovim/nvim-lspconfig"          -- optional
-    },
-    opts = {} -- your configuration
+	"Eingin/tailwind-tools.nvim",
+	enabled = false,
+	name = "tailwind-tools",
+	build = ":UpdateRemotePlugins",
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
+		"nvim-telescope/telescope.nvim", -- optional
+		"neovim/nvim-lspconfig"          -- optional
+	},
+	opts = {} -- your configuration
 }

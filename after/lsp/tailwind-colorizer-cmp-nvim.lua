@@ -1,10 +1,10 @@
 return {
-    "roobert/tailwindcss-colorizer-cmp.nvim",
-    -- optionally, override the default options:
-    enabled = true,
-    config = function ()
-        require("tailwindcss-colorizer-cmp").setup({
-            color_square_width = 2
-        })
-    end
+	"roobert/tailwindcss-colorizer-cmp.nvim",
+	-- optionally, override the default options:
+	enabled = true,
+	config = function ()
+		require("tailwindcss-colorizer-cmp").setup({
+			color_square_width = 2
+		})
+	end
 }

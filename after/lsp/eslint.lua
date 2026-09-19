@@ -1,15 +1,15 @@
 return {
-    cmd = { "vscode-eslint-language-server", "--stdio" },
-    filetypes = {
-        "javascript",
-        "javascriptreact",
-        "javascript.jsx",
-        "typescript",
-        "typescriptreact",
-        "typescript.tsx",
-        "vue",
-        "svelte",
-        "astro",
-        "htmlangular"
-    }
+	cmd = { "vscode-eslint-language-server", "--stdio" },
+	filetypes = {
+		"javascript",
+		"javascriptreact",
+		"javascript.jsx",
+		"typescript",
+		"typescriptreact",
+		"typescript.tsx",
+		"vue",
+		"svelte",
+		"astro",
+		"htmlangular"
+	}
 }
