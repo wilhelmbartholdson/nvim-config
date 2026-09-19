@@ -1,0 +1,7 @@
+WRN 2026-08-26T13:30:42.267 ui.54243   tui_stop:658: TUI: timed out waiting for DA1 response
+WRN 2026-09-15T18:32:16.259 ui.9218    tui_handle_term_mode:226: TUI: terminal mode 69 unavailable, state 0
+WRN 2026-09-15T18:32:16.260 ui.9218    tui_handle_term_mode:226: TUI: terminal mode 2026 unavailable, state 0
+WRN 2026-09-15T18:32:16.260 ui.9218    tui_handle_term_mode:226: TUI: terminal mode 2027 unavailable, state 0
+WRN 2026-09-15T18:32:16.260 ui.9218    tui_handle_term_mode:226: TUI: terminal mode 2031 unavailable, state 0
+WRN 2026-09-15T18:32:16.260 ui.9218    tui_handle_term_mode:226: TUI: terminal mode 2048 unavailable, state 0
+WRN 2026-09-15T18:33:49.493 ui.9218    tui_stop:658: TUI: timed out waiting for DA1 response
